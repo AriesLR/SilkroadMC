@@ -3,6 +3,8 @@ local flexUrl = "https://raw.githubusercontent.com/AriesLR/SilkroadMC/refs/heads
 local quarryUrl = "https://raw.githubusercontent.com/AriesLR/SilkroadMC/refs/heads/main/lib/quarry.lua"
 local recieveUrl = "https://raw.githubusercontent.com/AriesLR/SilkroadMC/refs/heads/main/lib/recieve.lua"
 local stairsUrl = "https://raw.githubusercontent.com/AriesLR/SilkroadMC/refs/heads/main/lib/stairs.lua"
+local uninstallUrl = "https://raw.githubusercontent.com/AriesLR/SilkroadMC/refs/heads/main/lib/uninstall.lua"
+local updateUrl = "https://raw.githubusercontent.com/AriesLR/SilkroadMC/refs/heads/main/lib/update.lua"
 local targetDir = "/silkroad"
 
 -- Ensure the directory exists

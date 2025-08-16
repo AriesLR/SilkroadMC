@@ -46,6 +46,14 @@ else
     print("stairs.lua not found, skipping...")
 end
 
+-- Delete log.txt
+if fs.exists("/silkroad/log.txt") then
+    print("Deleting log.txt...")
+    fs.delete("/silkroad/log.txt")
+else
+    print("log.txt not found, skipping...")
+end
+
 -- Delete startup.lua
 if fs.exists("/startup.lua") then
     print("Deleting startup.lua...")

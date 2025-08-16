@@ -423,52 +423,75 @@ end --while
 -- |__]  \_/   \_/  ||  --
 --------------------------
 
+local lastBroadcast = os.clock()
+local broadcastInterval = 20 -- seconds between GPS updates
+
+-- Function to broadcast current GPS coordinates
+local function broadcastPosition()
+    local x, y, z = gps.locate()
+    if x and y and z then
+        flex.send(
+            string.format("Current position: X=%d, Y=%d, Z=%d", x, y, z),
+            colors.yellow
+        )
+    else
+        flex.send("GPS signal not found!", colors.red)
+    end
+end
+
 local done = false
 while not done and not dig.isStuck() do
- turtle.select(1)
- 
- while not done do
-  
-  checkAll(0)
-  if dig.getz()<=0 and zdir==-1 then break end
-  if dig.getz()>=zmax-1 and zdir==1 then break end
-  
-  if zdir == 1 then dig.gotor(0)
-  elseif zdir == -1 then dig.gotor(180)
-  end --if/else
-  checkNewLayer()
-  
-  dig.fwd()
-  
-  if dig.isStuck() then
-   done = true
-  end --if
-  
- end --while (z loop)
- 
- if done then break end
- 
- zdir = -zdir
- newlayer = false
- 
- if dig.getx()<=0 and xdir==-1 then
-  newlayer = true
- elseif dig.getx()>=xmax-1 and xdir==1 then
-  newlayer = true
- else
-  checkAll(0)
-  dig.gotox(dig.getx()+xdir)
- end --if/else
- 
- if newlayer and not dig.isStuck() then
-  xdir = -xdir
-  if dig.getymin() <= ymin then break end
-  checkAll(0)
-  dig.down()
- end --if
- 
-end --while (cuboid dig loop)
+    turtle.select(1)
 
+    while not done do
+        checkAll(0)
+
+        if dig.getz() <= 0 and zdir == -1 then break end
+        if dig.getz() >= zmax-1 and zdir == 1 then break end
+
+        if zdir == 1 then
+            dig.gotor(0)
+        elseif zdir == -1 then
+            dig.gotor(180)
+        end
+
+        checkNewLayer()
+        dig.fwd()
+
+        -- <<< Periodic GPS broadcast >>>
+        local now = os.clock()
+        if now - lastBroadcast >= broadcastInterval then
+            broadcastPosition()
+            lastBroadcast = now
+        end
+        -- <<< End periodic GPS broadcast >>>
+
+        if dig.isStuck() then
+            done = true
+        end
+    end
+
+    if done then break end
+
+    zdir = -zdir
+    newlayer = false
+
+    if dig.getx() <= 0 and xdir == -1 then
+        newlayer = true
+    elseif dig.getx() >= xmax-1 and xdir == 1 then
+        newlayer = true
+    else
+        checkAll(0)
+        dig.gotox(dig.getx() + xdir)
+    end
+
+    if newlayer and not dig.isStuck() then
+        xdir = -xdir
+        if dig.getymin() <= ymin then break end
+        checkAll(0)
+        dig.down()
+    end
+end
 
 flex.send("Digging completed, returning to surface",
   colors.yellow)

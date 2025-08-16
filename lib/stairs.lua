@@ -149,32 +149,56 @@ flex.send("Digging staircase...",
 
 -- Staircase Digging Functions
 
+local function broadcastPosition()
+    local x, y, z = gps.locate()
+    if x and y and z then
+        flex.send(
+            string.format("Current position: X=%d, Y=%d, Z=%d", x, y, z),
+            colors.yellow
+        )
+    else
+        flex.send("GPS signal not found!", colors.red)
+    end
+end
+
 local torchNum = 9
 
 function placeTorch()
- turtle.select(3)
- if flex.isItem(name_torch) then
-  
-  if not turtle.place() then
-   if not dig.fwd() then return false end
-   turtle.select(2)
-   dig.place()
-   if not dig.back() then return false end
-   
-   turtle.select(3)
-   if not dig.place() then
-    if not dig.fwd() then return false end
-    turtle.select(2)
-    dig.placeUp()
-    if not dig.back() then return false end
     turtle.select(3)
-    dig.place()
-   end --if/else
-  end --if
- end --if
- 
- turtle.select(2)
-end --function
+    if flex.isItem(name_torch) then
+
+        local placed = false
+
+        if turtle.place() then
+            placed = true
+        else
+            if not dig.fwd() then return false end
+            turtle.select(2)
+            dig.place()
+            if not dig.back() then return false end
+
+            turtle.select(3)
+            if dig.place() then
+                placed = true
+            else
+                if not dig.fwd() then return false end
+                turtle.select(2)
+                dig.placeUp()
+                if not dig.back() then return false end
+                turtle.select(3)
+                dig.place()
+                placed = true
+            end
+        end
+
+        if placed then
+            broadcastPosition()
+        end
+
+    end
+    turtle.select(2)
+end
+
 
 
 function stepDown()

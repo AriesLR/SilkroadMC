@@ -40,7 +40,7 @@ options[options[1]] = {
 -- enable with dig.doBlacklist()
 options[options[2]] = { "chest", "spawn",
     "hopper", "dropper", "portal", "turtle",
-    "hive", "openblocks:grave", "_ore$", "xychorium_ore", "uraninite_ore" }
+    "hive", "openblocks:grave", "computer" "bedrock", "diamond_ore", "redstone_ore", "coal_ore", "emerald_ore" }
 doblacklist = true
 function doBlacklist(x)
  if x == nil then

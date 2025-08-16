@@ -22,6 +22,14 @@ else
     print("flex.lua not found, skipping...")
 end
 
+-- Delete flex_options.cfg
+if fs.exists("/silkroad/flex_options.cfg") then
+    print("Deleting flex_options.cfg...")
+    fs.delete("/silkroad/flex_options.cfg")
+else
+    print("flex_options.cfg not found, skipping...")
+end
+
 -- Delete quarry.lua
 if fs.exists("/silkroad/quarry.lua") then
     print("Deleting quarry.lua...")

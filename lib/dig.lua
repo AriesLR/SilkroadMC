@@ -505,24 +505,33 @@ end -- function
 
 
 function makeStartup(command, args)
- command = tostring(command)
- args = args or {}
- local x
- for x=1,#args do
-  command = command.." "..args[x]
- end --for
- 
- local file = fs.open(startfile,"w")
- file.writeLine("print(\"> "..command.."\")")
- file.writeLine("for x=5,1,-1 do")
- file.writeLine(" term.write(tostring(x)..\" \")")
- file.writeLine(" sleep(1)")
- file.writeLine("end --for")
- file.writeLine("print(\" \")")
- file.writeLine("shell.run(\""..command.."\")")
- file.close()
-end --function
+    command = tostring(command)
+    args = args or {}
 
+    -- Ensure the command is a full path
+    if not string.find(command, "^/") then
+        command = "/silkroad/" .. command
+        -- add .lua if missing
+        if not command:match("%.lua$") then
+            command = command .. ".lua"
+        end
+    end
+
+    -- Append arguments
+    for i = 1, #args do
+        command = command .. " " .. tostring(args[i])
+    end
+
+    local file = fs.open(startfile, "w")
+    file.writeLine("print(\"> " .. command .. "\")")
+    file.writeLine("for x=5,1,-1 do")
+    file.writeLine(" term.write(tostring(x)..\" \")")
+    file.writeLine(" sleep(1)")
+    file.writeLine("end --for")
+    file.writeLine("print(\" \")")
+    file.writeLine("shell.run(\"" .. command .. "\")")
+    file.close()
+end
 
 
 

@@ -53,7 +53,7 @@ local ymin = -depth --(1-depth)
 
 if xmax == nil or zmax == nil then
  flex.send("Invalid dimensions,",colors.red)
- shell.run("rm startup.lua")
+ shell.run("rm /silkroad/startup.lua")
  return
 end --if
 
@@ -405,7 +405,7 @@ while dig.gety() > -skip do
  if dig.isStuck() then
   flex.send("Co-ordinates lost! Shutting down",
     colors.red)
-  --rs.delete("startup.lua")
+  --rs.delete("/silkroad/startup.lua")
   return
  end --if
  

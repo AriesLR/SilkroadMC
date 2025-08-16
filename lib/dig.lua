@@ -271,9 +271,9 @@ end --if
 -- |_/ ||||  \_] ||\\  \__| ||  --
 ----------------------------------
 
-local save = {"dig_save", ".cfg"}
+local save = {"/silkroad/dig_save", ".cfg"}
 local savefile = save[1] .. save[2]
-local start = {"startup", ".lua"}
+local start = {"/silkroad/startup", ".lua"}
 local startfile = start[1] .. start[2]
 
 function saveExists()

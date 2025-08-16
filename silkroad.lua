@@ -47,7 +47,7 @@ downloadFile(recieveUrl, targetDir)
 downloadFile(stairsUrl, targetDir)
 
 print("All files downloaded successfully to " .. targetDir)
-sleep(3)
+sleep(1)
 print("Navigating to " .. targetDir)
 sleep(2)
 term.clear()

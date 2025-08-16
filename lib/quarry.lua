@@ -16,8 +16,8 @@
 --  \_\\  \__| |||| | \ | \  ||  --
 -----------------------------------
 
-os.loadAPI("flex.lua")
-os.loadAPI("dig.lua")
+os.loadAPI("/silkroad/flex.lua")
+os.loadAPI("/silkroad/dig.lua")
 dig.doBlacklist() -- Avoid Protected Blocks
 dig.doAttack() -- Attack entities that block the way
 dig.setFuelSlot(1)
@@ -498,5 +498,5 @@ dig.gotor(0)
 
 dig.clearSave()
 flex.modemOff()
-os.unloadAPI("dig.lua")
-os.unloadAPI("flex.lua")
+os.unloadAPI("/silkroad/dig.lua")
+os.unloadAPI("/silkroad/flex.lua")

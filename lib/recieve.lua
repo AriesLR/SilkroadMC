@@ -8,14 +8,14 @@
 -- | \|__] \_]|__][__]  \/  |__]| \ --
 --------------------------------------
 
-local log_file = "log.txt"
-local options_file = "flex_options.cfg"
-os.loadAPI("flex.lua")
+local log_file = "/silkroad/log.txt"
+local options_file = "/silkroad/flex_options.cfg"
+os.loadAPI("/silkroad/flex.lua")
 local modem_channel = 6464
 
 
 if fs.exists(options_file) then
- local file = fs.open("flex_options.cfg", "r")
+ local file = fs.open("/silkroad/flex_options.cfg", "r")
  local line = file.readLine()
  while line ~= nil do
   if string.find(line, "modem_channel=") == 1 then

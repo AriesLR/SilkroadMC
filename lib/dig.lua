@@ -11,7 +11,7 @@
 -- |_/  [__]  \__|   |||| ||  [__] --
 -------------------------------------
 
-os.loadAPI("flex.lua")
+os.loadAPI("/silkroad/flex.lua")
 
 local options = {
   "outputblocks",

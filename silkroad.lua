@@ -1,7 +1,7 @@
 local digUrl = "https://raw.githubusercontent.com/AriesLR/SilkroadMC/refs/heads/main/lib/dig.lua"
 local flexUrl = "https://raw.githubusercontent.com/AriesLR/SilkroadMC/refs/heads/main/lib/flex.lua"
 local quarryUrl = "https://raw.githubusercontent.com/AriesLR/SilkroadMC/refs/heads/main/lib/quarry.lua"
-local recieveUrl = "https://raw.githubusercontent.com/AriesLR/SilkroadMC/refs/heads/main/lib/recieve.lua"
+local receiveUrl = "https://raw.githubusercontent.com/AriesLR/SilkroadMC/refs/heads/main/lib/receive.lua"
 local stairsUrl = "https://raw.githubusercontent.com/AriesLR/SilkroadMC/refs/heads/main/lib/stairs.lua"
 local uninstallUrl = "https://raw.githubusercontent.com/AriesLR/SilkroadMC/refs/heads/main/lib/uninstall.lua"
 local updateUrl = "https://raw.githubusercontent.com/AriesLR/SilkroadMC/refs/heads/main/lib/update.lua"
@@ -42,8 +42,8 @@ downloadFile(flexUrl, targetDir)
 -- Download quarry.lua
 downloadFile(quarryUrl, targetDir)
 
--- Download recieve.lua
-downloadFile(recieveUrl, targetDir)
+-- Download receive.lua
+downloadFile(receiveUrl, targetDir)
 
 -- Download stairs.lua
 downloadFile(stairsUrl, targetDir)

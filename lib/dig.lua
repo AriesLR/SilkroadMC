@@ -188,7 +188,7 @@ end --function
 --      ||  [__]|__]|__]          --
 ------------------------------------
 
-local options_file = "dig_options.cfg"
+local options_file = "/silkroad/dig_options.cfg"
 
 function optionsEdit()
  shell.run("edit "..options_file)
@@ -273,7 +273,7 @@ end --if
 
 local save = {"/silkroad/dig_save", ".cfg"}
 local savefile = save[1] .. save[2]
-local start = {"/silkroad/startup", ".lua"}
+local start = {"startup", ".lua"}
 local startfile = start[1] .. start[2]
 
 function saveExists()
@@ -1335,7 +1335,7 @@ end --function
 
 
 local fuelvalue = {}
-local fuelfile = "dig_fuel.cfg"
+local fuelfile = "/silkroad/dig_fuel.cfg"
 local file, line
 if fs.exists(fuelfile) then
  file = fs.open(fuelfile, "r")

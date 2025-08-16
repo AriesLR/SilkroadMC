@@ -48,6 +48,12 @@ downloadFile(recieveUrl, targetDir)
 -- Download stairs.lua
 downloadFile(stairsUrl, targetDir)
 
+-- Download uninstall.lua
+downloadFile(uninstallUrl, targetDir)
+
+-- Download update.lua
+downloadFile(updateUrl, targetDir)
+
 print("All files downloaded successfully to " .. targetDir)
 sleep(1)
 print("Navigating to " .. targetDir)

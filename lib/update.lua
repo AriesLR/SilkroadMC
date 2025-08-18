@@ -14,6 +14,30 @@ else
     print("dig.lua not found, skipping...")
 end
 
+-- Delete dig_options.cfg
+if fs.exists("/silkroad/dig_options.cfg") then
+    print("Deleting dig_options.cfg...")
+    fs.delete("/silkroad/dig_options.cfg")
+else
+    print("dig_options.cfg not found, skipping...")
+end
+
+-- Delete dig_fuel.cfg
+if fs.exists("/silkroad/dig_fuel.cfg") then
+    print("Deleting dig_fuel.cfg...")
+    fs.delete("/silkroad/dig_fuel.cfg")
+else
+    print("dig_fuel.cfg not found, skipping...")
+end
+
+-- Delete dig_save.cfg
+if fs.exists("/silkroad/dig_save.cfg") then
+    print("Deleting dig_save.cfg...")
+    fs.delete("/silkroad/dig_save.cfg")
+else
+    print("dig_save.cfg not found, skipping...")
+end
+
 -- Delete flex.lua
 if fs.exists("/silkroad/flex.lua") then
     print("Deleting flex.lua...")

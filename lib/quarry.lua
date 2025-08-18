@@ -431,7 +431,7 @@ local function broadcastPosition()
     local x, y, z = gps.locate()
     if x and y and z then
         flex.send(
-            string.format("Current position: X=%d, Y=%d, Z=%d", x, y, z),
+            string.format("Coords: X=%d, Y=%d, Z=%d", x, y, z),
             colors.yellow
         )
     else

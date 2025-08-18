@@ -29,6 +29,7 @@ local name_box = {
 -- Stair blocks crafting material
 local name_cobble = {
   "minecraft:cobblestone",
+  "minecraft:cobbled_deepslate",
   "forge:cobblestone" }
 
 

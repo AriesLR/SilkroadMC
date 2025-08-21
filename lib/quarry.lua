@@ -432,7 +432,7 @@ local function broadcastPosition()
     if x and y and z then
         flex.send(
             string.format("Coords: X=%d, Y=%d, Z=%d", x, y, z),
-            colors.yellow
+            colors.magenta
         )
     else
         flex.send("GPS signal not found!", colors.red)

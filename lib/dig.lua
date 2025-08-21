@@ -11,7 +11,7 @@
 -- |_/  [__]  \__|   |||| ||  [__] --
 -------------------------------------
 
-os.loadAPI("/silkroad/flex.lua")
+os.loadAPI("/sr/flex.lua")
 
 local options = {
   "outputblocks",
@@ -188,7 +188,7 @@ end --function
 --      ||  [__]|__]|__]          --
 ------------------------------------
 
-local options_file = "/silkroad/dig_options.cfg"
+local options_file = "/sr/dig_options.cfg"
 
 function optionsEdit()
  shell.run("edit "..options_file)
@@ -271,7 +271,7 @@ end --if
 -- |_/ ||||  \_] ||\\  \__| ||  --
 ----------------------------------
 
-local save = {"/silkroad/dig_save", ".cfg"}
+local save = {"/sr/dig_save", ".cfg"}
 local savefile = save[1] .. save[2]
 local start = {"startup", ".lua"}
 local startfile = start[1] .. start[2]
@@ -510,7 +510,7 @@ function makeStartup(command, args)
 
     -- Ensure the command is a full path
     if not string.find(command, "^/") then
-        command = "/silkroad/" .. command
+        command = "/sr/" .. command
         -- add .lua if missing
         if not command:match("%.lua$") then
             command = command .. ".lua"
@@ -1344,7 +1344,7 @@ end --function
 
 
 local fuelvalue = {}
-local fuelfile = "/silkroad/dig_fuel.cfg"
+local fuelfile = "/sr/dig_fuel.cfg"
 local file, line
 if fs.exists(fuelfile) then
  file = fs.open(fuelfile, "r")

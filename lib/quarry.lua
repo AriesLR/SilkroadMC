@@ -16,8 +16,8 @@
 --  \_\\  \__| |||| | \ | \  ||  --
 -----------------------------------
 
-os.loadAPI("/silkroad/flex.lua")
-os.loadAPI("/silkroad/dig.lua")
+os.loadAPI("/sr/flex.lua")
+os.loadAPI("/sr/dig.lua")
 dig.doBlacklist() -- Avoid Protected Blocks
 dig.doAttack() -- Attack entities that block the way
 dig.setFuelSlot(1)
@@ -53,7 +53,7 @@ local ymin = -depth --(1-depth)
 
 if xmax == nil or zmax == nil then
  flex.send("Invalid dimensions,",colors.red)
- shell.run("rm /silkroad/startup.lua")
+ shell.run("rm /sr/startup.lua")
  return
 end --if
 
@@ -405,7 +405,7 @@ while dig.gety() > -skip do
  if dig.isStuck() then
   flex.send("Co-ordinates lost! Shutting down",
     colors.red)
-  --rs.delete("/silkroad/startup.lua")
+  --rs.delete("/sr/startup.lua")
   return
  end --if
  
@@ -521,5 +521,5 @@ dig.gotor(0)
 
 dig.clearSave()
 flex.modemOff()
-os.unloadAPI("/silkroad/dig.lua")
-os.unloadAPI("/silkroad/flex.lua")
+os.unloadAPI("/sr/dig.lua")
+os.unloadAPI("/sr/flex.lua")

@@ -44,8 +44,8 @@ end --if
 
 
 -- Load APIs
-os.loadAPI("/silkroad/flex.lua")
-os.loadAPI("/silkroad/dig.lua")
+os.loadAPI("/sr/flex.lua")
+os.loadAPI("/sr/dig.lua")
 dig.setFuelSlot(1)
 dig.setBlockSlot(2)
 dig.setBlockStacks(4)
@@ -837,5 +837,5 @@ else
 end --if
 
 flex.modemOff()
-os.unloadAPI("/silkroad/dig.lua")
-os.unloadAPI("/silkroad/flex.lua")
+os.unloadAPI("/sr/dig.lua")
+os.unloadAPI("/sr/flex.lua")

@@ -5,7 +5,7 @@ local receiveUrl = "https://raw.githubusercontent.com/AriesLR/SilkroadMC/refs/he
 local stairsUrl = "https://raw.githubusercontent.com/AriesLR/SilkroadMC/refs/heads/main/lib/stairs.lua"
 local uninstallUrl = "https://raw.githubusercontent.com/AriesLR/SilkroadMC/refs/heads/main/lib/uninstall.lua"
 local updateUrl = "https://raw.githubusercontent.com/AriesLR/SilkroadMC/refs/heads/main/lib/update.lua"
-local targetDir = "/silkroad"
+local targetDir = "/sr"
 
 -- Ensure the directory exists
 if not fs.exists(targetDir) then

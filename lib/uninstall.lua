@@ -1,9 +1,9 @@
--- Delete the /silkroad folder and everything inside it
-if fs.exists("/silkroad") then
-    print("Deleting /silkroad folder and its contents...")
-    fs.delete("/silkroad")
+-- Delete the /sr folder and everything inside it
+if fs.exists("/sr") then
+    print("Deleting /sr folder and its contents...")
+    fs.delete("/sr")
 else
-    print("/silkroad folder not found, skipping...")
+    print("/sr folder not found, skipping...")
 end
 
 -- Delete startup.lua
@@ -23,7 +23,7 @@ else
 end
 
 -- Temporary script to delete this script after it finishes
-local selfPath = "/silkroad/uninstall.lua"
+local selfPath = "/sr/uninstall.lua"
 local temp = fs.open("/delete_self.lua", "w")
 temp.write([[
 sleep(0.5)

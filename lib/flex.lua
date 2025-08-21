@@ -8,8 +8,8 @@
 -- ||   |__] |__] //\\    |||| ||  [__]  --
 -------------------------------------------
 
-local log_file = "/silkroad/log.txt"
-local options_file = "/silkroad/flex_options.cfg"
+local log_file = "/sr/log.txt"
+local options_file = "/sr/flex_options.cfg"
 
 -- Defaults; can be changed in config file
 local modem_channel = 6464
